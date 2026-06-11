@@ -2,7 +2,7 @@
 Configuration file for the gateway application.
 """
 
-INITIAL_STATE = "connected"  # Initial state of the gateway: "unregistered" | "registered" | "connected"
+INITIAL_STATE = "unregistered"  # Changed for PQTLS testing
 MAX_REGISTRATION_ATTEMPTS = 10
  
 # Gateway identification
@@ -13,7 +13,13 @@ MOCK_PASSWORD = "B827EBB633811234"
 ATL = 1
 RTL = 0.8
 
-# HTTP Endpoints
+# Post-Quantum TLS Configuration
+USE_PQTLS = True
+PQTLS_SERVER_IP = "192.168.1.152"
+PQTLS_SERVER_PORT = 8080
+PQ_SDK_BUILD_PATH = "/c/tellucare/pq_sdk/build"  # Path to generated _piqaso.so
+
+# HTTP Endpoints (Legacy/Fall-back)
 REGISTRATION_ENDPOINT = "http://192.168.1.152:3010/register"  # Replace with actual registration endpoint
 WIPE_ENDPOINT = "http://192.168.1.152:3010/wipe"  # Replace with actual registration endpoint
 GET_CREDENTIALS_ENDPOINT = "http://192.168.1.152:3010/getCredentials"  # Replace with actual credentials endpoint

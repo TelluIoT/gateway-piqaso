@@ -15,6 +15,7 @@ import config as config
 # Import handlers
 from MqttHandler import MqttHandler
 from BluetoothAdapter import BluetoothAdapter
+from pqtls_adapter import PQTLSAdapter
 
 
 class GatewayState:
@@ -54,6 +55,8 @@ class Gateway:
         self.ble_adapter = BluetoothAdapter()
         self.ble_adapter.inject_mqtt_handler(self.mqtt_handler)
         
+        self.pqtls_adapter = PQTLSAdapter() # Initialize PQTLS adapter
+
         # Set up callbacks
         # self.mqtt_handler.set_pairing_callback(self.handle_instruction)
         
@@ -115,7 +118,21 @@ class Gateway:
             bool: True if registration was successful, False otherwise.
         """
         print(f"Attempting to register gateway {self.mac_address}...")
-        
+
+        # PQTLS implementation
+        if config.USE_PQTLS:
+            print("Using PQTLS for registration...")
+            response_data = self.pqtls_adapter.register(self.mac_address)
+            
+            if response_data.get("status") == "success" or "secret" in response_data:
+                self.secret = response_data.get("secret", self.mac_address + 'abcd')
+                print(f"PQTLS Registration successful, received secret")
+                return True
+            else:
+                print(f"PQTLS Registration failed: {response_data.get('message', 'Unknown error')}")
+                return False
+
+        # Legacy HTTP fallback
         try:
             response = requests.get(
                 f"{config.REGISTRATION_ENDPOINT}?macAddress={self.mac_address}",
@@ -163,6 +180,21 @@ class Gateway:
             
         print(f"Requesting MQTT credentials for gateway {self.mac_address}...")
         
+        # PQTLS implementation
+        if config.USE_PQTLS:
+            print("Using PQTLS for retrieving credentials...")
+            response_data = self.pqtls_adapter.get_credentials(self.mac_address, self.secret)
+            
+            if "username" in response_data and "password" in response_data:
+                self.mqtt_username = response_data['username']
+                self.mqtt_password = response_data['password']
+                print("PQTLS Credentials request successful")
+                return True
+            else:
+                print(f"PQTLS Credentials request failed: {response_data.get('message', 'Invalid response')}")
+                return False
+
+        # Legacy HTTP fallback
         try:
             response = requests.get(
                 f"{config.GET_CREDENTIALS_ENDPOINT}?macAddress={self.mac_address}&secret={self.secret}",
