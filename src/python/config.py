@@ -17,9 +17,9 @@ RTL = 0.8
 USE_PQTLS = True
 PQTLS_SERVER_IP = "192.168.1.152"
 PQTLS_SERVER_PORT = 8080
-# Path to generated _piqaso.so (relative to the gateway root or absolute)
-# On the Pi, this will be in the pq_sdk/build folder we just created
-PQ_SDK_BUILD_PATH = "../../../pq_sdk/build" 
+# Path to the PQ SDK build folder (where piqaso_client binary is located)
+# This assumes both repos are cloned in the same parent directory on the Pi
+PQ_SDK_BUILD_PATH = "/home/pi/pq_sdk/build" 
 
 # HTTP Endpoints (Legacy/Fall-back)
 REGISTRATION_ENDPOINT = "http://192.168.1.152:3010/register"  # Replace with actual registration endpoint
