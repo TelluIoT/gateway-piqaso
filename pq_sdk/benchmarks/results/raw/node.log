@@ -1,84 +1,0 @@
-  mlkem          [######------------------------] 1/5  mlkem          [############------------------] 2/5  mlkem          [##################------------] 3/5  mlkem          [########################------] 4/5  mlkem          [##############################] 5/5   (0.0s)
-  mldsa          [######------------------------] 1/5  mldsa          [############------------------] 2/5  mldsa          [##################------------] 3/5  mldsa          [########################------] 4/5  mldsa          [##############################] 5/5   (0.1s)
-  aes            [######------------------------] 1/5  aes            [############------------------] 2/5  aes            [##################------------] 3/5  aes            [########################------] 4/5  aes            [##############################] 5/5   (0.0s)
-  lms            [######------------------------] 1/5  lms            [############------------------] 2/5  lms            [##################------------] 3/5  lms            [########################------] 4/5  lms            [##############################] 5/5   (0.5s)
-  xmss           [######------------------------] 1/5  xmss           [############------------------] 2/5  xmss           [##################------------] 3/5  xmss           [########################------] 4/5  xmss           [##############################] 5/5   (38.4s)
-  wrapper node   ... (38.8s, 170 samples)
-build dir : build-js
-repeats   : 5  (inner iters: 1)
-benches   : mlkem, mldsa, aes, lms, xmss
-
-
-operation                              n          min         mean          max          std
---------------------------------------------------------------------------------------------
-aescbc_128_decrypt                     5      7.61 us      8.28 us     10.33 us      1.03 us
-aescbc_128_encrypt                     5    174.90 us    190.62 us    200.99 us      9.58 us
-aescbc_256_decrypt                     5      5.95 us      7.18 us      8.07 us     689.6 ns
-aescbc_256_encrypt                     5    175.59 us    184.73 us    198.62 us      8.47 us
-aesgcm_128_decrypt                     5     10.85 us     11.96 us     13.11 us     821.5 ns
-aesgcm_128_encrypt                     5    208.82 us    223.69 us    246.85 us     14.19 us
-aesgcm_192_decrypt                     5     10.07 us     12.17 us     13.47 us      1.18 us
-aesgcm_192_encrypt                     5    183.20 us    198.22 us    213.75 us     11.09 us
-aesgcm_256_decrypt                     5     10.55 us     12.51 us     13.55 us      1.10 us
-aesgcm_256_encrypt                     5    186.78 us    195.60 us    213.35 us      9.42 us
-js_aescbc_128_decrypt                  5     10.42 us     14.05 us     23.50 us      4.95 us
-js_aescbc_128_encrypt                  5    152.53 us    169.59 us    207.30 us     19.70 us
-js_aescbc_256_decrypt                  5     10.97 us     13.70 us     20.43 us      3.67 us
-js_aescbc_256_encrypt                  5    153.03 us    167.51 us    192.58 us     13.58 us
-js_aesgcm_128_decrypt                  5     15.97 us     19.88 us     31.45 us      5.84 us
-js_aesgcm_128_encrypt                  5    170.49 us    186.18 us    214.90 us     17.77 us
-js_aesgcm_192_decrypt                  5     17.24 us     18.05 us     20.61 us      1.29 us
-js_aesgcm_192_encrypt                  5    172.72 us    183.68 us    212.36 us     14.53 us
-js_aesgcm_256_decrypt                  5     16.79 us     17.61 us     18.37 us     628.0 ns
-js_aesgcm_256_encrypt                  5    162.24 us    165.38 us    169.40 us      3.18 us
-js_lms_L1_H5_W2_keygen                 5     31.08 ms     36.02 ms     51.94 ms      8.09 ms
-js_lms_L1_H5_W2_sign                   5     31.14 ms     33.08 ms     40.13 ms      3.53 ms
-js_lms_L1_H5_W2_verify                 5    438.98 us    470.24 us    517.76 us     33.80 us
-js_mldsa_level2_keygen                 5    480.33 us    570.95 us    824.61 us    127.62 us
-js_mldsa_level2_sign                   5    724.07 us      1.33 ms      1.69 ms    348.19 us
-js_mldsa_level2_verify                 5    337.50 us    347.55 us    357.80 us      7.31 us
-js_mldsa_level3_keygen                 5    715.35 us    741.05 us    758.13 us     15.85 us
-js_mldsa_level3_sign                   5      1.00 ms      1.97 ms      2.79 ms    791.07 us
-js_mldsa_level3_verify                 5    524.07 us    541.57 us    584.73 us     23.85 us
-js_mldsa_level5_keygen                 5    879.10 us    921.78 us    984.94 us     38.37 us
-js_mldsa_level5_sign                   5      1.29 ms      2.45 ms      3.29 ms    785.29 us
-js_mldsa_level5_verify                 5    750.90 us    774.26 us    814.42 us     23.12 us
-js_mlkem_level1_decaps                 5    149.71 us    156.71 us    176.84 us     10.12 us
-js_mlkem_level1_encaps                 5    258.75 us    285.39 us    308.24 us     17.56 us
-js_mlkem_level1_keygen                 5    257.52 us    282.97 us    367.49 us     42.44 us
-js_mlkem_level3_decaps                 5    221.27 us    226.63 us    231.83 us      3.75 us
-js_mlkem_level3_encaps                 5    315.62 us    322.07 us    330.70 us      5.96 us
-js_mlkem_level3_keygen                 5    320.12 us    324.65 us    330.55 us      3.94 us
-js_mlkem_level5_decaps                 5    312.08 us    319.05 us    332.76 us      7.36 us
-js_mlkem_level5_encaps                 5    394.16 us    412.63 us    433.35 us     12.46 us
-js_mlkem_level5_keygen                 5    393.94 us    401.68 us    408.72 us      5.11 us
-js_xmss_SHA2_10_256_keygen             5     7.654 s      7.660 s      7.665 s       3.70 ms
-js_xmss_SHA2_10_256_sign               5     10.96 ms     11.12 ms     11.22 ms    110.01 us
-js_xmss_SHA2_10_256_verify             5      3.92 ms      4.08 ms      4.39 ms    173.65 us
-lms_L1_H5_W2_keygen                    5     51.50 ms     60.68 ms     73.13 ms      7.08 ms
-lms_L1_H5_W2_sign                      5     45.59 ms     46.16 ms     46.65 ms    421.48 us
-lms_L1_H5_W2_verify                    5    572.55 us    611.03 us    638.42 us     21.54 us
-mldsa_level2_keygen                    5    518.47 us    616.17 us    739.90 us     86.65 us
-mldsa_level2_sign                      5      1.16 ms      1.88 ms      3.53 ms    924.67 us
-mldsa_level2_verify                    5    362.62 us    400.06 us    428.86 us     23.72 us
-mldsa_level3_keygen                    5    801.93 us    860.42 us    912.28 us     35.64 us
-mldsa_level3_sign                      5      1.12 ms      3.80 ms      7.45 ms      2.31 ms
-mldsa_level3_verify                    5    531.22 us    594.63 us    649.18 us     42.91 us
-mldsa_level5_keygen                    5    994.75 us      1.15 ms      1.29 ms    104.27 us
-mldsa_level5_sign                      5      2.26 ms      4.41 ms      6.46 ms      1.45 ms
-mldsa_level5_verify                    5    860.51 us    940.20 us      1.06 ms     77.83 us
-mlkem_level1_decaps                    5    145.64 us    177.35 us    197.15 us     18.27 us
-mlkem_level1_encaps                    5    276.75 us    321.51 us    416.75 us     49.37 us
-mlkem_level1_keygen                    5    294.82 us    359.83 us    400.57 us     36.58 us
-mlkem_level3_decaps                    5    219.81 us    272.56 us    305.89 us     29.01 us
-mlkem_level3_encaps                    5    316.01 us    394.41 us    441.74 us     47.50 us
-mlkem_level3_keygen                    5    338.32 us    396.22 us    458.86 us     45.75 us
-mlkem_level5_decaps                    5    336.06 us    394.95 us    470.54 us     43.55 us
-mlkem_level5_encaps                    5    415.29 us    513.99 us    563.74 us     51.19 us
-mlkem_level5_keygen                    5    395.17 us    498.24 us    574.07 us     59.84 us
-xmss_SHA2_10_256_keygen                5     7.615 s      7.653 s      7.736 s      42.79 ms
-xmss_SHA2_10_256_sign                  5     10.69 ms     10.97 ms     11.40 ms    243.72 us
-xmss_SHA2_10_256_verify                5      3.86 ms      4.10 ms      4.36 ms    176.35 us
---------------------------------------------------------------------------------------------
-total wall time: 77.9s
-raw summary written to /home/stef/workspace/piqaso/pq_sdk/benchmarks/results/node.json

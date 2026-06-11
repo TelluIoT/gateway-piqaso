@@ -1,84 +1,0 @@
-  mlkem          [######------------------------] 1/5  mlkem          [############------------------] 2/5  mlkem          [##################------------] 3/5  mlkem          [########################------] 4/5  mlkem          [##############################] 5/5   (0.0s)
-  mldsa          [######------------------------] 1/5  mldsa          [############------------------] 2/5  mldsa          [##################------------] 3/5  mldsa          [########################------] 4/5  mldsa          [##############################] 5/5   (0.1s)
-  aes            [######------------------------] 1/5  aes            [############------------------] 2/5  aes            [##################------------] 3/5  aes            [########################------] 4/5  aes            [##############################] 5/5   (0.0s)
-  lms            [######------------------------] 1/5  lms            [############------------------] 2/5  lms            [##################------------] 3/5  lms            [########################------] 4/5  lms            [##############################] 5/5   (0.4s)
-  xmss           [######------------------------] 1/5  xmss           [############------------------] 2/5  xmss           [##################------------] 3/5  xmss           [########################------] 4/5  xmss           [##############################] 5/5   (33.2s)
-  wrapper java   ... (37.2s, 170 samples)
-build dir : build-java
-repeats   : 5  (inner iters: 1)
-benches   : mlkem, mldsa, aes, lms, xmss
-
-
-operation                              n          min         mean          max          std
---------------------------------------------------------------------------------------------
-aescbc_128_decrypt                     5      3.61 us      6.32 us     10.14 us      2.12 us
-aescbc_128_encrypt                     5    103.13 us    154.07 us    185.18 us     34.68 us
-aescbc_256_decrypt                     5      3.58 us      5.52 us      7.38 us      1.39 us
-aescbc_256_encrypt                     5    115.50 us    162.91 us    201.95 us     33.54 us
-aesgcm_128_decrypt                     5      6.53 us      9.89 us     13.36 us      2.76 us
-aesgcm_128_encrypt                     5    134.69 us    187.63 us    226.29 us     36.98 us
-aesgcm_192_decrypt                     5      7.31 us     10.35 us     13.58 us      2.61 us
-aesgcm_192_encrypt                     5    112.32 us    167.54 us    218.22 us     40.48 us
-aesgcm_256_decrypt                     5      7.83 us     10.94 us     13.89 us      2.49 us
-aesgcm_256_encrypt                     5    109.57 us    167.18 us    208.21 us     39.37 us
-java_aescbc_128_decrypt                5      3.82 us     22.34 us     81.79 us     29.88 us
-java_aescbc_128_encrypt                5     65.82 us     95.78 us    188.19 us     46.46 us
-java_aescbc_256_decrypt                5      3.89 us      4.37 us      5.64 us     656.1 ns
-java_aescbc_256_encrypt                5     61.69 us     71.90 us     79.88 us      7.78 us
-java_aesgcm_128_decrypt                5      6.59 us     22.25 us     83.46 us     30.61 us
-java_aesgcm_128_encrypt                5     70.39 us    107.59 us    250.23 us     71.36 us
-java_aesgcm_192_decrypt                5      6.92 us     24.40 us     93.23 us     34.42 us
-java_aesgcm_192_encrypt                5     70.42 us     74.48 us     84.92 us      5.37 us
-java_aesgcm_256_decrypt                5      6.90 us      8.34 us     12.28 us      2.01 us
-java_aesgcm_256_encrypt                5     66.90 us     78.09 us    102.85 us     12.77 us
-java_lms_L1_H5_W2_keygen               5     15.17 ms     17.93 ms     28.69 ms      5.38 ms
-java_lms_L1_H5_W2_sign                 5     16.15 ms     17.15 ms     20.76 ms      1.81 ms
-java_lms_L1_H5_W2_verify               5    221.74 us    240.76 us    261.31 us     15.60 us
-java_mldsa_level2_keygen               5    191.10 us      2.18 ms     10.10 ms      3.96 ms
-java_mldsa_level2_sign                 5    399.18 us    818.14 us      1.52 ms    415.23 us
-java_mldsa_level2_verify               5    129.63 us    156.07 us    229.56 us     37.14 us
-java_mldsa_level3_keygen               5    269.82 us    279.20 us    290.74 us      8.41 us
-java_mldsa_level3_sign                 5    384.40 us    749.32 us      1.53 ms    425.46 us
-java_mldsa_level3_verify               5    202.38 us    213.37 us    235.01 us     11.71 us
-java_mldsa_level5_keygen               5    363.17 us    379.55 us    405.04 us     14.43 us
-java_mldsa_level5_sign                 5    661.18 us    753.04 us    897.13 us     93.35 us
-java_mldsa_level5_verify               5    320.08 us    328.12 us    337.43 us      5.80 us
-java_mlkem_level1_decaps               5     67.44 us     92.69 us    186.98 us     47.17 us
-java_mlkem_level1_encaps               5    118.06 us    151.80 us    257.76 us     53.18 us
-java_mlkem_level1_keygen               5    124.86 us    198.81 us    463.16 us    132.25 us
-java_mlkem_level3_decaps               5     92.56 us     98.90 us    105.56 us      5.57 us
-java_mlkem_level3_encaps               5    129.65 us    137.55 us    148.18 us      6.00 us
-java_mlkem_level3_keygen               5    132.11 us    148.38 us    179.79 us     16.39 us
-java_mlkem_level5_decaps               5    130.13 us    133.92 us    136.68 us      2.46 us
-java_mlkem_level5_encaps               5    160.85 us    167.89 us    176.78 us      6.43 us
-java_mlkem_level5_keygen               5    171.51 us    176.01 us    182.60 us      4.14 us
-java_xmss_SHA2_10_256_keygen           5     5.471 s      7.246 s      7.917 s     903.61 ms
-java_xmss_SHA2_10_256_sign             5     11.09 ms     11.45 ms     11.95 ms    334.08 us
-java_xmss_SHA2_10_256_verify           5      3.87 ms      4.25 ms      4.66 ms    292.99 us
-lms_L1_H5_W2_keygen                    5     35.18 ms     41.21 ms     51.03 ms      6.92 ms
-lms_L1_H5_W2_sign                      5     30.47 ms     36.72 ms     45.82 ms      7.40 ms
-lms_L1_H5_W2_verify                    5    388.20 us    482.12 us    614.62 us     97.93 us
-mldsa_level2_keygen                    5    546.17 us    603.98 us    672.13 us     46.10 us
-mldsa_level2_sign                      5    869.31 us      1.37 ms      2.36 ms    528.75 us
-mldsa_level2_verify                    5    340.05 us    389.19 us    459.30 us     47.70 us
-mldsa_level3_keygen                    5    715.55 us    823.13 us    913.41 us     84.26 us
-mldsa_level3_sign                      5    979.74 us      2.82 ms      4.07 ms      1.27 ms
-mldsa_level3_verify                    5    384.35 us    575.03 us    693.07 us    110.39 us
-mldsa_level5_keygen                    5    697.62 us      1.06 ms      1.31 ms    209.47 us
-mldsa_level5_sign                      5      1.31 ms      2.58 ms      5.54 ms      1.54 ms
-mldsa_level5_verify                    5    494.06 us    837.18 us      1.01 ms    177.48 us
-mlkem_level1_decaps                    5     68.91 us    160.65 us    204.93 us     47.25 us
-mlkem_level1_encaps                    5    115.00 us    297.84 us    425.26 us    103.81 us
-mlkem_level1_keygen                    5    138.19 us    329.55 us    453.19 us    104.50 us
-mlkem_level3_decaps                    5     94.31 us    254.90 us    325.91 us     82.06 us
-mlkem_level3_encaps                    5    135.46 us    361.05 us    513.54 us    127.83 us
-mlkem_level3_keygen                    5    136.77 us    350.84 us    448.68 us    110.39 us
-mlkem_level5_decaps                    5    139.10 us    343.10 us    430.76 us    104.31 us
-mlkem_level5_encaps                    5    177.98 us    447.27 us    565.15 us    141.28 us
-mlkem_level5_keygen                    5    169.05 us    465.34 us    558.13 us    148.90 us
-xmss_SHA2_10_256_keygen                5     4.641 s      6.615 s      7.701 s      1.323 s 
-xmss_SHA2_10_256_sign                  5      5.39 ms      9.94 ms     11.34 ms      2.28 ms
-xmss_SHA2_10_256_verify                5      1.90 ms      3.85 ms      4.57 ms    998.53 us
---------------------------------------------------------------------------------------------
-total wall time: 70.9s
-raw summary written to /home/stef/workspace/piqaso/pq_sdk/benchmarks/results/java.json

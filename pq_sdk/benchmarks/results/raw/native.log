@@ -1,49 +1,0 @@
-  mlkem          [######------------------------] 1/5  mlkem          [############------------------] 2/5  mlkem          [##################------------] 3/5  mlkem          [########################------] 4/5  mlkem          [##############################] 5/5   (0.0s)
-  mldsa          [######------------------------] 1/5  mldsa          [############------------------] 2/5  mldsa          [##################------------] 3/5  mldsa          [########################------] 4/5  mldsa          [##############################] 5/5   (0.0s)
-  aes            [######------------------------] 1/5  aes            [############------------------] 2/5  aes            [##################------------] 3/5  aes            [########################------] 4/5  aes            [##############################] 5/5   (0.0s)
-  lms            [######------------------------] 1/5  lms            [############------------------] 2/5  lms            [##################------------] 3/5  lms            [########################------] 4/5  lms            [##############################] 5/5   (0.3s)
-  xmss           [######------------------------] 1/5  xmss           [############------------------] 2/5  xmss           [##################------------] 3/5  xmss           [########################------] 4/5  xmss           [##############################] 5/5   (38.5s)
-build dir : build-native
-repeats   : 5  (inner iters: 1)
-benches   : mlkem, mldsa, aes, lms, xmss
-
-
-operation                              n          min         mean          max          std
---------------------------------------------------------------------------------------------
-aescbc_128_decrypt                     5      2.10 us      3.07 us      6.66 us      1.80 us
-aescbc_128_encrypt                     5     61.72 us     67.05 us     74.48 us      4.51 us
-aescbc_256_decrypt                     5      2.00 us      2.33 us      3.08 us     405.3 ns
-aescbc_256_encrypt                     5     62.45 us     66.17 us     74.42 us      4.67 us
-aesgcm_128_decrypt                     5      4.16 us      4.41 us      5.01 us     312.7 ns
-aesgcm_128_encrypt                     5     74.19 us     80.75 us     90.84 us      6.81 us
-aesgcm_192_decrypt                     5      3.55 us      4.22 us      4.68 us     387.3 ns
-aesgcm_192_encrypt                     5     63.32 us     66.55 us     76.36 us      4.94 us
-aesgcm_256_decrypt                     5      4.07 us      4.43 us      4.77 us     280.6 ns
-aesgcm_256_encrypt                     5     63.35 us     67.63 us     78.99 us      5.79 us
-lms_L1_H5_W2_keygen                    5     35.18 ms     35.50 ms     35.84 ms    253.65 us
-lms_L1_H5_W2_sign                      5     30.39 ms     31.66 ms     32.93 ms    978.49 us
-lms_L1_H5_W2_verify                    5    322.69 us    387.48 us    450.45 us     51.15 us
-mldsa_level2_keygen                    5    191.53 us    211.82 us    235.85 us     15.12 us
-mldsa_level2_sign                      5    273.57 us    582.79 us      1.41 ms    420.64 us
-mldsa_level2_verify                    5    122.80 us    127.74 us    136.69 us      4.69 us
-mldsa_level3_keygen                    5    260.61 us    269.64 us    292.25 us     11.60 us
-mldsa_level3_sign                      5    492.17 us    599.07 us    784.81 us    112.52 us
-mldsa_level3_verify                    5    189.97 us    200.28 us    208.38 us      5.99 us
-mldsa_level5_keygen                    5    357.37 us    363.93 us    372.55 us      5.38 us
-mldsa_level5_sign                      5    535.19 us      1.14 ms      2.52 ms    724.47 us
-mldsa_level5_verify                    5    306.12 us    311.96 us    326.65 us      7.57 us
-mlkem_level1_decaps                    5     59.32 us     84.77 us    174.22 us     44.97 us
-mlkem_level1_encaps                    5    108.93 us    159.74 us    321.51 us     81.12 us
-mlkem_level1_keygen                    5    119.17 us    180.38 us    380.09 us    100.39 us
-mlkem_level3_decaps                    5     88.90 us    122.61 us    247.02 us     62.23 us
-mlkem_level3_encaps                    5    132.74 us    183.02 us    355.16 us     86.29 us
-mlkem_level3_keygen                    5    127.16 us    177.74 us    366.15 us     94.29 us
-mlkem_level5_decaps                    5    126.25 us    178.15 us    372.22 us     97.09 us
-mlkem_level5_encaps                    5    167.00 us    230.29 us    475.71 us    122.72 us
-mlkem_level5_keygen                    5    163.92 us    229.67 us    436.33 us    105.32 us
-xmss_SHA2_10_256_keygen                5     7.607 s      7.690 s      7.916 s     115.53 ms
-xmss_SHA2_10_256_sign                  5     10.82 ms     11.19 ms     11.51 ms    278.53 us
-xmss_SHA2_10_256_verify                5      3.80 ms      4.05 ms      4.25 ms    161.57 us
---------------------------------------------------------------------------------------------
-total wall time: 38.9s
-raw summary written to /home/stef/workspace/piqaso/pq_sdk/benchmarks/results/native.json

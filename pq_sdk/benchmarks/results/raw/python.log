@@ -1,84 +1,0 @@
-  mlkem          [######------------------------] 1/5  mlkem          [############------------------] 2/5  mlkem          [##################------------] 3/5  mlkem          [########################------] 4/5  mlkem          [##############################] 5/5   (0.0s)
-  mldsa          [######------------------------] 1/5  mldsa          [############------------------] 2/5  mldsa          [##################------------] 3/5  mldsa          [########################------] 4/5  mldsa          [##############################] 5/5   (0.0s)
-  aes            [######------------------------] 1/5  aes            [############------------------] 2/5  aes            [##################------------] 3/5  aes            [########################------] 4/5  aes            [##############################] 5/5   (0.0s)
-  lms            [######------------------------] 1/5  lms            [############------------------] 2/5  lms            [##################------------] 3/5  lms            [########################------] 4/5  lms            [##############################] 5/5   (0.4s)
-  xmss           [######------------------------] 1/5  xmss           [############------------------] 2/5  xmss           [##################------------] 3/5  xmss           [########################------] 4/5  xmss           [##############################] 5/5   (38.9s)
-  wrapper python ... (40.2s, 170 samples)
-build dir : build-py
-repeats   : 5  (inner iters: 1)
-benches   : mlkem, mldsa, aes, lms, xmss
-
-
-operation                              n          min         mean          max          std
---------------------------------------------------------------------------------------------
-aescbc_128_decrypt                     5      5.77 us      7.35 us     11.13 us      1.95 us
-aescbc_128_encrypt                     5    174.65 us    186.64 us    198.17 us      9.02 us
-aescbc_256_decrypt                     5      5.77 us      6.41 us      7.43 us     695.4 ns
-aescbc_256_encrypt                     5    162.36 us    180.05 us    192.21 us     10.97 us
-aesgcm_128_decrypt                     5     10.53 us     11.55 us     13.23 us     965.9 ns
-aesgcm_128_encrypt                     5    211.59 us    221.54 us    232.68 us      8.65 us
-aesgcm_192_decrypt                     5      9.54 us     11.04 us     13.36 us      1.31 us
-aesgcm_192_encrypt                     5    173.84 us    185.10 us    191.83 us      6.19 us
-aesgcm_256_decrypt                     5     11.69 us     12.82 us     14.27 us      1.08 us
-aesgcm_256_encrypt                     5    170.48 us    186.90 us    200.78 us     10.40 us
-lms_L1_H5_W2_keygen                    5     35.03 ms     50.09 ms     83.75 ms     19.18 ms
-lms_L1_H5_W2_sign                      5     21.65 ms     36.81 ms     46.72 ms      8.63 ms
-lms_L1_H5_W2_verify                    5    331.20 us    491.11 us    605.15 us    109.16 us
-mldsa_level2_keygen                    5    190.58 us    385.85 us    778.80 us    215.26 us
-mldsa_level2_sign                      5    373.97 us    883.89 us      1.45 ms    383.69 us
-mldsa_level2_verify                    5    122.66 us    216.11 us    386.63 us     99.30 us
-mldsa_level3_keygen                    5    260.48 us    496.94 us    820.42 us    250.46 us
-mldsa_level3_sign                      5    368.32 us      1.01 ms      2.09 ms    620.67 us
-mldsa_level3_verify                    5    191.73 us    350.36 us    637.78 us    181.72 us
-mldsa_level5_keygen                    5    352.72 us    638.15 us      1.14 ms    328.00 us
-mldsa_level5_sign                      5    686.80 us      1.44 ms      2.10 ms    485.00 us
-mldsa_level5_verify                    5    311.10 us    584.13 us      1.10 ms    331.11 us
-mlkem_level1_decaps                    5     59.16 us     83.20 us    178.70 us     47.75 us
-mlkem_level1_encaps                    5    104.81 us    153.20 us    321.71 us     84.42 us
-mlkem_level1_keygen                    5    116.48 us    171.27 us    354.97 us     92.09 us
-mlkem_level3_decaps                    5     88.62 us    129.55 us    278.62 us     74.68 us
-mlkem_level3_encaps                    5    129.50 us    187.41 us    399.51 us    106.13 us
-mlkem_level3_keygen                    5    127.34 us    183.44 us    380.50 us     98.81 us
-mlkem_level5_decaps                    5    127.46 us    174.49 us    349.73 us     87.66 us
-mlkem_level5_encaps                    5    167.98 us    233.79 us    479.09 us    122.68 us
-mlkem_level5_keygen                    5    160.82 us    235.93 us    508.67 us    136.43 us
-py_aescbc_128_decrypt                  5      5.21 us      7.00 us     12.64 us      2.84 us
-py_aescbc_128_encrypt                  5    149.28 us    160.48 us    189.12 us     14.54 us
-py_aescbc_256_decrypt                  5      5.80 us      6.20 us      7.17 us     502.7 ns
-py_aescbc_256_encrypt                  5    142.75 us    150.69 us    153.34 us      4.02 us
-py_aesgcm_128_decrypt                  5     10.84 us     11.92 us     14.45 us      1.32 us
-py_aesgcm_128_encrypt                  5    159.21 us    174.30 us    206.39 us     18.46 us
-py_aesgcm_192_decrypt                  5     11.10 us     11.21 us     11.52 us     159.1 ns
-py_aesgcm_192_encrypt                  5    156.59 us    175.28 us    193.81 us     15.57 us
-py_aesgcm_256_decrypt                  5     11.90 us     12.38 us     12.92 us     375.8 ns
-py_aesgcm_256_encrypt                  5    191.66 us    194.76 us    200.56 us      3.29 us
-py_lms_L1_H5_W2_keygen                 5     32.62 ms     37.72 ms     50.88 ms      7.07 ms
-py_lms_L1_H5_W2_sign                   5     31.36 ms     33.69 ms     41.41 ms      3.87 ms
-py_lms_L1_H5_W2_verify                 5    467.04 us    499.49 us    600.91 us     50.89 us
-py_mldsa_level2_keygen                 5    461.84 us    513.68 us    604.48 us     49.69 us
-py_mldsa_level2_sign                   5    770.24 us      2.35 ms      4.15 ms      1.08 ms
-py_mldsa_level2_verify                 5    338.40 us    351.46 us    362.32 us      8.88 us
-py_mldsa_level3_keygen                 5    702.71 us    724.17 us    736.91 us     12.00 us
-py_mldsa_level3_sign                   5      1.98 ms      3.33 ms      4.71 ms    882.16 us
-py_mldsa_level3_verify                 5    529.80 us    549.73 us    564.91 us     11.46 us
-py_mldsa_level5_keygen                 5    881.22 us    927.59 us    987.62 us     40.96 us
-py_mldsa_level5_sign                   5      1.34 ms      2.89 ms      7.16 ms      2.16 ms
-py_mldsa_level5_verify                 5    747.51 us    780.95 us    804.13 us     21.22 us
-py_mlkem_level1_decaps                 5    141.48 us    146.98 us    157.90 us      6.11 us
-py_mlkem_level1_encaps                 5    243.28 us    261.98 us    295.16 us     17.54 us
-py_mlkem_level1_keygen                 5    260.40 us    274.86 us    291.10 us     12.12 us
-py_mlkem_level3_decaps                 5    209.95 us    217.14 us    223.94 us      4.68 us
-py_mlkem_level3_encaps                 5    303.55 us    316.42 us    325.45 us      7.14 us
-py_mlkem_level3_keygen                 5    304.23 us    324.84 us    350.17 us     16.18 us
-py_mlkem_level5_decaps                 5    301.13 us    311.06 us    323.28 us      8.49 us
-py_mlkem_level5_encaps                 5    384.93 us    402.39 us    416.97 us     12.76 us
-py_mlkem_level5_keygen                 5    384.26 us    393.38 us    408.21 us      8.76 us
-py_xmss_SHA2_10_256_keygen             5     7.748 s      7.919 s      7.973 s      85.66 ms
-py_xmss_SHA2_10_256_sign               5     10.74 ms     11.08 ms     11.52 ms    272.55 us
-py_xmss_SHA2_10_256_verify             5      3.80 ms      4.08 ms      4.43 ms    232.98 us
-xmss_SHA2_10_256_keygen                5     7.641 s      7.757 s      7.910 s     121.11 ms
-xmss_SHA2_10_256_sign                  5     10.97 ms     11.19 ms     11.62 ms    237.24 us
-xmss_SHA2_10_256_verify                5      3.77 ms      4.14 ms      4.67 ms    323.78 us
---------------------------------------------------------------------------------------------
-total wall time: 79.6s
-raw summary written to /home/stef/workspace/piqaso/pq_sdk/benchmarks/results/python.json
