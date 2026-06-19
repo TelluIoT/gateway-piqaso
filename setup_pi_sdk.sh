@@ -9,8 +9,15 @@ echo "Installing build dependencies..."
 sudo apt-get update
 sudo apt-get install -y build-essential cmake swig python3-dev libssl-dev git
 
-echo "Building PQ SDK from the included folder..."
-cd "$SCRIPT_DIR/pq_sdk"
+echo "Preparing PQ SDK..."
+# We assume the user clones pq_sdk in the same parent directory as gateway-piqaso
+cd "$SCRIPT_DIR/.."
+if [ ! -d "pq_sdk" ]; then
+    echo "Cloning PQ SDK..."
+    git clone https://gitlab.com/piqaso/pq_sdk.git
+fi
+
+cd pq_sdk
 mkdir -p build
 cd build
 cmake ..
